@@ -15,13 +15,11 @@ header {
   align-items: center;
   flex-direction: column;
 }
-
 header img {
   display: block;
   margin: 0 auto;
 }
-
-.header__location {
+header .header__location {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +35,11 @@ nav {
   width: 100%;
   padding: 15px 0;
 }
-
-.nav__title,
-.nav__content {
+nav .nav__title,
+nav .nav__content {
   text-align: center;
 }
-
-.nav__button {
+nav .nav__button {
   display: inline-block;
   padding: 12px 24px;
   font-weight: bold;
@@ -66,28 +62,33 @@ nav {
 .fonctionnement {
   display: flex;
   align-items: center;
+  min-height: 70px;
   margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 0px 4px 15px 0px grey;
   width: 80%;
+  position: relative;
 }
-
-.fonctionnement__number {
-  font-size: 2rem;
+.fonctionnement .fonctionnement__number {
+  font-size: 14px;
   font-weight: bold;
-  color: #7e57c2;
+  color: white;
   margin-right: 15px;
+  position: absolute;
+  background-color: #9356DC;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  left: -10px;
+  text-align: center;
+  line-height: 24px;
 }
-
-.fonctionnement__title {
-  font-size: 1.2rem;
-  color: #333;
-  margin: 0;
+.fonctionnement .fonctionnement__title {
+  font-size: 16px;
 }
-
 .fonctionnement i {
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-right: 15px;
   color: #7E7E7E;
 }/*# sourceMappingURL=style.css.map */
