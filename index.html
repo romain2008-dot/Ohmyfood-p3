@@ -6,7 +6,8 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/28476c165b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="saas/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,16 +16,26 @@
         <nav>
         <h1 class="nav__title">Réservez le menu qui vous convient</h1>
         <p class="nav__content">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-        <button class="nav__button">Explorer nos restaurants</button>
+        <a href="#" class="nav__button">Explorer nos restaurants</a>
         </nav>
     </header>
-
-    <section>
-        <h2>Fonctionnement</h2>
-        <button><em>1</em><i class="fa-solid fa-mobile-screen-button"></i> Choisissez un restaurant</button>
-        <button><em>2</em><i class="fa-solid fa-list-ul"></i> Composer votre menu</button>
-        <button><em>3</em><i class="fa-solid fa-store"></i>Dégustez au restaurant</button>
-    </section>
+    <section class="fonctionnement__section">
+        <div class="fonctionnement">
+            <span class="fonctionnement__number">1</span>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h2 class="fonctionnement__title">Choisissez un restaurant</h2>
+        </div>
+        <div class="fonctionnement">
+            <span class="fonctionnement__number">2</span>
+            <i class="fa-solid fa-list-ul"></i>
+            <h2 class="fonctionnement__title">Composez votre menu</h2>
+        </div>
+        <div class="fonctionnement">
+            <span class="fonctionnement__number">3</span>
+            <i class="fa-solid fa-store"></i>
+            <h2 class="fonctionnement__title">Dégustez au restaurant</h2>
+        </div>
+    </section>    
     <section>
         <h2>Restaurants</h2>
         <div>
