@@ -114,23 +114,24 @@ nav {
 
     a{
         width: 100%;
+        display:block;
     }
+}
+
+.card__container{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    width: 100%;
-    max-width: 300px;
-    overflow: hidden;
-    margin: 10px; 
+    margin: 0 20px;
+    overflow: hidden; 
     box-shadow: 0 4px 15px 0px grey; 
-    
-    &__image {
-        width: 100%;
-        height: auto;
-    }
+    position: relative;
 
     &__content {
         padding: 15px; 
@@ -139,8 +140,27 @@ nav {
 
     &__icon {
         display: flex;
-        justify-content: right;
-        align-items: center;
+        justify-content: end;
+    }
+
+    &__image{
+        height: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        object-position: bottom;
+
+    }
+
+    .card__image--position{
+        object-position: 0px -260px;
+    }
+
+    &__icon{
+        font-size: 21px;
+        position: absolute;
+        bottom: 30px;  
+        right: 25px;
     }
 }
 

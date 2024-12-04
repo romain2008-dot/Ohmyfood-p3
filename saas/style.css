@@ -102,21 +102,23 @@ nav .nav__button {
 }
 .restaurant a {
   width: 100%;
+  display: block;
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  width: 100%;
-  max-width: 300px;
+  margin: 0 20px;
   overflow: hidden;
-  margin: 10px;
   box-shadow: 0 4px 15px 0px grey;
-}
-.card__image {
-  width: 100%;
-  height: auto;
+  position: relative;
 }
 .card__content {
   padding: 15px;
@@ -124,6 +126,24 @@ nav .nav__button {
 }
 .card__icon {
   display: flex;
-  justify-content: right;
-  align-items: center;
+  justify-content: end;
+}
+.card__image {
+  height: 100%;
+  height: auto;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.card .card__image--position {
+  -o-object-position: 0px -260px;
+     object-position: 0px -260px;
+}
+.card__icon {
+  font-size: 21px;
+  position: absolute;
+  bottom: 30px;
+  right: 25px;
 }/*# sourceMappingURL=style.css.map */
