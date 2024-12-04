@@ -13,6 +13,10 @@ $thirdColor: #99E2D0;
     font-family: "Roboto", sans-serif;
 }
 
+a{
+    text-decoration: none;
+}
+
 header {
     display: flex;
     justify-content: center;
@@ -24,7 +28,7 @@ header {
         margin: 0 auto;
     }
 
-    .&__location {
+    .header__location {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,18 +39,19 @@ header {
     }
 }
 
+
 nav {
     text-align: center;
     background-color: #f0f0f0;
     width: 100%;
     padding: 15px 0;
 
-    .&__title,
-    .&__content {
+    .nav__title,
+    .nav__content {
         text-align: center;
     }
 
-    .&__button {
+    .nav__button {
         display: inline-block;
         padding: 12px 24px;
         font-weight: bold;
@@ -78,7 +83,7 @@ nav {
     width: 80%;
     position: relative;
 
-    .&__number {
+    &__number {
         font-size: 14px;
         font-weight: bold;
         color: white;
@@ -93,7 +98,7 @@ nav {
         line-height: 24px;
     }
 
-    .&__title {
+    &__title {
         font-size: 16px;
     }
 
@@ -103,3 +108,39 @@ nav {
         color: #7E7E7E;
     }
 }
+
+.restaurant{
+    background-color: #f0f0f0;
+
+    a{
+        width: 100%;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    margin: 10px; 
+    box-shadow: 0 4px 15px 0px grey; 
+    
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__content {
+        padding: 15px; 
+        color: black;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+}
+
