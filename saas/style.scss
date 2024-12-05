@@ -17,23 +17,33 @@ a{
     text-decoration: none;
 }
 
-header {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    img {
-        display: block;
-        margin: 0 auto;
+    &__image{
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0px 2px 4px 0px #00000026;
+        position: relative;
+        z-index: 1;
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }  
     }
 
-    .header__location {
+    &__location {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap:17px ;
+        position: relative;
         background-color: #EAEAEA;
-        box-shadow: 2px 2px 10px 2px grey;
+        box-shadow: 0 4px 4px 0 #00000040;
         height: 50px;
         width: 100%;
     }
@@ -44,11 +54,12 @@ nav {
     text-align: center;
     background-color: #f0f0f0;
     width: 100%;
-    padding: 15px 0;
+    padding-bottom: 40px;
 
     .nav__title,
     .nav__content {
         text-align: center;
+        margin: 15px 0 ;
     }
 
     .nav__button {
@@ -65,11 +76,20 @@ nav {
 }
 
 .fonctionnement__section {
+    margin: 50px 0;
+
+    h2{
+        padding: 0px 0px 20px 45px;
+    }
+
+}
+
+.fonctionnement__container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px 0;
+    width: 100%;
 }
 
 .fonctionnement {
@@ -111,11 +131,12 @@ nav {
 
 .restaurant{
     background-color: #f0f0f0;
+    padding-bottom: 20px;
 
-    a{
-        width: 100%;
-        display:block;
+    h2{
+        padding: 40px 0px 20px 20px ;
     }
+
 }
 
 .card__container{
@@ -130,7 +151,7 @@ nav {
     border-radius: 15px;
     margin: 0 20px;
     overflow: hidden; 
-    box-shadow: 0 4px 15px 0px grey; 
+    /*box-shadow: 0 4px 15px 0px grey;*/ 
     position: relative;
 
     &__content {
@@ -161,6 +182,51 @@ nav {
         position: absolute;
         bottom: 30px;  
         right: 25px;
+        color: black;
+    }
+
+    &__nouveau{
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        background-color: $thirdColor;
+        color: darken($thirdColor,  50%);
+        padding:  5px 10px;
     }
 }
 
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color:#353535;
+
+    &__link{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    h2{
+        font-family: "Shrikhand", serif;
+        color: white;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    &__first,
+    &__second{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        a{
+            color: white;
+        }
+    }
+
+    &__link,
+    h2{
+        margin: 16px;
+    }
+
+}
