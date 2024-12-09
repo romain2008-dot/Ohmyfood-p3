@@ -53,7 +53,8 @@ nav .nav__content {
   text-align: center;
   margin: 15px 0;
 }
-nav .nav__button {
+
+.nav__button {
   display: inline-block;
   padding: 12px 24px;
   font-weight: bold;
