@@ -10,6 +10,11 @@
 
     .element-start{
         margin-right: auto;
+
+        a{
+            color: #353535;
+        }
+
     }
 
     .element-middle{
@@ -27,6 +32,8 @@
 
 .img-restaurant{
     width: 100%;
+    height: 275px;
+    object-fit: cover;
 }
 
 .title__icon{
@@ -52,6 +59,16 @@
 .menu{
 
     margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .line{
+        height: 3px;
+        width: 40px ;
+        background-color: #99E2D0;
+        margin: 5px 0;
+    }
 
     &__section{
         display: flex;
@@ -64,22 +81,26 @@
         font-weight: 300;
     }
 
-    &__item{
-
+    .menu__item {
         box-shadow: 0px 4px 15px 0px #0000001A;
         border-radius: 15px;
         height: 70px;
-
-     &--description,
-     &--price{
-         font-size: 15px;
-         font-weight: 300;
-     }
- 
-     &--price{
-         font-weight: 700;
-     }
-    } 
-
+        padding: 15px ;
     
+        &--details {
+
+            display: flex;
+            justify-content: space-between;
+
+            .menu__item--description,
+            .menu__item--price {
+                font-size: 15px;
+                font-weight: 300;
+            }
+    
+            .menu__item--price {
+                font-weight: 700;
+            }
+        }
+    }    
 }
