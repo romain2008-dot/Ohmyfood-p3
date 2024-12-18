@@ -1,0 +1,44 @@
+.logo-back {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 0 20px;
+}
+.logo-back img {
+  margin: 14px 0;
+}
+.logo-back .element-start {
+  margin-right: auto;
+}
+.logo-back .element-middle {
+  margin: 0 auto;
+}
+
+.main {
+  background-color: #f6f6f6;
+  position: relative;
+  margin-top: -4rem;
+  z-index: 1;
+  border-radius: 30px 30px 0 0;
+}
+
+.img-restaurant {
+  width: 100%;
+}
+
+.title__icon {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 15px;
+}
+.title__icon h1 {
+  font-family: "Shrikhand", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 auto;
+}
+.title__icon i {
+  margin-left: auto;
+  font-size: 28px;
+}/*# sourceMappingURL=style-restaurant.css.map */

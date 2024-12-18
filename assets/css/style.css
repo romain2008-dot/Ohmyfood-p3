@@ -151,10 +151,6 @@ nav .nav__content {
   height: auto;
   max-height: 250px;
   object-fit: cover;
-  object-position: bottom;
-}
-.card .card__image--position {
-  object-position: 0px -260px;
 }
 .card__icon {
   font-size: 21px;
