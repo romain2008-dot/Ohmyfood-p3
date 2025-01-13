@@ -40,6 +40,22 @@ a {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2509803922);
   height: 50px;
   width: 100%;
+  color: #353535;
+}
+.header__location input {
+  border: none;
+  outline: none;
+  background: #EAEAEA;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #353535;
+}
+.header__location input::placeholder {
+  font-weight: 500;
+  color: #353535;
+  font-size: 16px;
 }
 
 nav {
@@ -113,6 +129,9 @@ nav .nav__content {
   font-size: 24px;
   margin-right: 15px;
   color: #7E7E7E;
+}
+.fonctionnement .fa-solid.fa-store {
+  color: #9356DC;
 }
 
 .restaurant {
