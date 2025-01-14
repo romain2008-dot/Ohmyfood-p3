@@ -26,7 +26,13 @@
     <main class="main">
         <div class="title__icon">
          <h1>La palette du goût </h1> 
-         <i class="fa-regular fa-heart"></i>
+         <div class="card__icon animation-restaurant">
+            <input type="checkbox" id="heart-toggle-1" class="heart-toggle">
+            <label for="heart-toggle-1">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-heart"></i>
+            </label>
+        </div>
         </div>
         <section class="menu">
             <div class="menu__entrees">
@@ -108,7 +114,9 @@
             </div>
         </section>        
         <div class="container__button">
-            <a href="#" class="nav__button">Commander</a>
+            <a href="#" class="nav__button">
+                <span>Commander</span>
+            </a>
         </div>
     </main>
     <footer class="footer">
