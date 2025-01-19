@@ -1,3 +1,29 @@
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes checkAnimation {
+  from {
+    transform: scale(0, 1) translateX(100%);
+  }
+  to {
+    transform: scale(1, 1) translateX(0);
+  }
+}
+@keyframes priceSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-60px);
+  }
+}
 .logo-back {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -36,17 +62,36 @@
   left: 0;
   top: -6px;
 }
-.card__icon i {
+.card__icon .fa-heart {
   font-size: 28px;
+  transition: opacity 300ms ease, transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 .card__icon .fa-regular.fa-heart,
 .card__icon .fa-solid.fa-heart {
   width: 28px;
+  position: absolute;
+}
+.card__icon .fa-solid.fa-heart {
+  opacity: 0;
+  transform: scale(0);
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.card__icon input:checked + label .fa-solid.fa-heart {
+  opacity: 1;
+  transform: scale(1);
+}
+.card__icon input:checked + label .fa-regular.fa-heart {
+  opacity: 0;
 }
 
 .title__icon {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
   padding: 15px;
   position: relative;
 }
@@ -83,6 +128,34 @@
   height: 70px;
   display: flex;
   position: relative;
+  overflow: hidden;
+}
+.menu .menu__item:nth-child(1) {
+  animation-delay: 100ms;
+}
+.menu .menu__item:nth-child(2) {
+  animation-delay: 200ms;
+}
+.menu .menu__item:nth-child(3) {
+  animation-delay: 300ms;
+}
+.menu .menu__item:nth-child(4) {
+  animation-delay: 400ms;
+}
+.menu .menu__item:nth-child(5) {
+  animation-delay: 500ms;
+}
+.menu .menu__item:nth-child(6) {
+  animation-delay: 600ms;
+}
+.menu .menu__item:nth-child(7) {
+  animation-delay: 700ms;
+}
+.menu .menu__item:nth-child(8) {
+  animation-delay: 800ms;
+}
+.menu .menu__item:nth-child(9) {
+  animation-delay: 900ms;
 }
 .menu .menu__item .menu__label {
   display: flex;
@@ -90,6 +163,7 @@
   height: 70px;
   padding: 15px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .menu .menu__item .menu__label .menu__animation {
   background: #99E2D0;
@@ -100,10 +174,11 @@
   display: flex;
   position: absolute;
   right: 0;
-  top: 0%;
-  transition: transform 300ms linear;
-  transform: scale(0, 1);
+  top: 0;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(60px);
   transform-origin: right;
+  will-change: transform;
 }
 .menu .menu__item .menu__label .menu__animation .awesome--container {
   width: 20px;
@@ -122,12 +197,18 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 .menu .menu__item .menu__item--content {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+.menu .menu__item .menu__item--content h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu .menu__item--details {
   display: flex;
@@ -138,10 +219,14 @@
   font-size: 15px;
   font-weight: 300;
   flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu .menu__item--details .menu__item--price {
   font-size: 15px;
   font-weight: 700;
+  transition: transform 300ms ease;
+  margin-left: 10px;
 }
 .menu .menu__item .menu__checkbox {
   display: none;
@@ -149,10 +234,13 @@
 .menu .menu__item .menu__checkbox:checked + .menu__label .menu__animation {
   transform: scale(1);
 }
+.menu .menu__item .menu__checkbox:checked + .menu__label .menu__item--price {
+  transform: translateX(-60px);
+}
 .menu .container__button {
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin-bottom: 40px;
 }
 .menu .container__button .nav__button {
   width: 190px;
@@ -160,4 +248,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.menu .container__button .nav__button:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  opacity: 0.9;
 }/*# sourceMappingURL=style-restaurant.css.map */
