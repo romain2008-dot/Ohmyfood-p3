@@ -70,10 +70,16 @@ nav {
     width: 100%;
     padding-bottom: 10px;
 
+    p{
+            font-weight: 300;
+        }
+
     .nav__title,
     .nav__content {
         text-align: center;
         margin: 15px 0 ;
+
+        
     }
 
 }
@@ -301,4 +307,80 @@ nav {
         margin: 16px;
     }
 
+}
+
+@media (min-width: 1024px){
+
+    /*body{
+        max-width: 1444px;
+        margin: 0 auto;
+    }*/
+
+    nav{
+        h1{
+        font-size: 40px;
+     }
+
+     p{
+        font-size: 18px;font-weight: 300;
+     }
+    }
+
+    .fonctionnement__section{
+
+        .fonctionnement__title__container{
+            max-width: 1110px;
+            margin: 0 auto;
+        }
+
+        .fonctionnement__container{
+        flex-direction: row;
+        max-width: 1053px;
+        margin: 0 auto;
+        gap: 30px;
+        }
+    }
+
+    .restaurant__title__container{
+        max-width: 1100px;
+        margin: 0 auto;
+        
+        .card__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+
+        .card {
+            height: 250px; 
+        }
+        
+        .card__image {
+            height: 75%; 
+            object-fit: cover; 
+        }
+        
+        .card__content {
+            padding: 10px; 
+            height: 25%; 
+        }
+      }
+    } 
+
+    .footer{
+        flex-direction: row-reverse;
+        align-items: center;
+
+        &__link{
+            flex-direction: row;
+            gap: 50px;
+
+            .footer__first,
+            .footer__second{
+                flex-direction: row;
+                gap: 20px;
+            }
+
+        }
+
+    }
 }
