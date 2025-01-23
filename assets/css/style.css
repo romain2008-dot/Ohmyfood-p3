@@ -309,6 +309,7 @@ nav .nav__content {
   .footer {
     flex-direction: row-reverse;
     align-items: center;
+    padding: 30px 25px 0;
   }
   .footer__link {
     flex-direction: row;

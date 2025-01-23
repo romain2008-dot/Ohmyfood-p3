@@ -233,3 +233,26 @@ $thirdColor: #99E2D0;
         }
     }
 }
+
+@media (min-width: 1024px){
+    .logo-back {
+    
+        .element-start {
+
+            a {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .img-restaurant{
+        height: 383px;
+    }
+
+    .main{
+        max-width: 66%;
+        margin: 0 auto;
+        padding: 0 10%;
+        margin-top: -64px;
+    }
+}
