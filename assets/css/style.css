@@ -195,16 +195,17 @@ nav .nav__content {
   font-size: 21px;
   position: absolute;
   bottom: 30px;
-  right: 25px;
+  right: 0px;
   color: black;
 }
 .card__icon .heart-toggle {
-  display: none;
-}
-.card__icon .label {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: -22px;
+  width: 22px;
+  height: 22px;
+  z-index: 10;
+  opacity: 0;
 }
 .card__icon .fa-regular.fa-heart {
   position: absolute;
@@ -223,7 +224,7 @@ nav .nav__content {
   -webkit-background-clip: text;
   color: transparent;
 }
-.card__icon .heart-toggle:checked + label .fa-solid.fa-heart {
+.card__icon .heart-toggle:checked ~ .fa-solid.fa-heart {
   transform: scale(1.1);
 }
 .card__nouveau {

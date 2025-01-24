@@ -43,12 +43,20 @@ $thirdColor: #99E2D0;
 .card__icon {
     position: absolute;
     left: 0;
-    top: -6px;
+    top: 5px;
+
+    .heart-toggle {
+        height: 28px;
+        width: 28px;
+        left: 0;
+      }
 
     .fa-heart {
         font-size: 28px;
         transition: transform 300ms linear;
         will-change: transform;
+        width: 28px;
+        position: absolute;
     }
 
     .fa-regular.fa-heart,
@@ -56,7 +64,12 @@ $thirdColor: #99E2D0;
         width: 28px;
         position: absolute;
     }
+    
+    .fa-solid.fa-heart {
+        margin-top: 2px;
+    }
 }
+
 
 .title__icon {
     display: flex;
@@ -96,7 +109,7 @@ $thirdColor: #99E2D0;
         flex-direction: column;
         gap: 12px;
     }
-
+ 
     .menu__item {
         box-shadow: 0px 4px 15px 0px #0000001A;
         border-radius: 15px;
@@ -105,19 +118,20 @@ $thirdColor: #99E2D0;
         display: flex;
         position: relative;
         overflow: hidden;
+
+        .menu-item-checkbox{
+            opacity: 0;
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
         
         @for $i from 1 through 9 {
             &:nth-child(#{$i}) {
                 animation-delay: #{$i * 100}ms;
             }
         }
-
-        .menu__label {
-            display: flex;
-            width: 100%;
-            height: 70px;
-            box-sizing: border-box;
-            cursor: pointer;
 
             .menu__animation {
                 background: $thirdColor;
@@ -155,6 +169,7 @@ $thirdColor: #99E2D0;
                 }
             }
         }
+            
 
         .menu__item--content {
             width: 100%;
@@ -167,9 +182,10 @@ $thirdColor: #99E2D0;
             }
         }
         
-        &--details {
+        .menu__item--details {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             width: 100%;
     
             .menu__item--description {
@@ -183,29 +199,26 @@ $thirdColor: #99E2D0;
                 font-size: 15px;
                 font-weight: 700;
                 margin-left: 10px;
+                color: #353535;
                 transition: transform 300ms ease;
                 will-change: transform;
             }
         }
-    
-        .menu__checkbox {
-            display: none;
-    
-            &:checked + .menu__label {
-                .menu__animation {
-                    transform: translateX(0px);
-                    i{
-                        transform: rotate(0deg);
-                    }
-                }
-                
-                .menu__item--price {
-                    transform: translateX(-60px);
-                }
+
+    }
+
+    .menu-item-checkbox:checked ~ .menu__animation {
+            transform: translateX(0);
+
+            .awesome--container i {
+                transform: rotate(0);
             }
         }
-    }
-    
+
+        .menu-item-checkbox:checked ~ .menu__item--content .menu__item--details .menu__item--price {
+            transform: translateX(-60px);
+        }        
+
     .container__button {
         display: flex;
         justify-content: center;
@@ -232,7 +245,6 @@ $thirdColor: #99E2D0;
             }
         }
     }
-}
 
 @media (min-width: 1024px){
     .logo-back {
