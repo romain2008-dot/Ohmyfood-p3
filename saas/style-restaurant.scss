@@ -178,7 +178,7 @@ $thirdColor: #99E2D0;
             gap: 5px;
             
             h3 {
-                white-space: nowrap;
+                width: 100%;
             }
         }
         
@@ -268,3 +268,12 @@ $thirdColor: #99E2D0;
         margin-top: -64px;
     }
 }
+
+/*.menu__item--title,
+.menu__item--description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: calc(80%);
+} */
