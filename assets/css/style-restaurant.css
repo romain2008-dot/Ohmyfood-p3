@@ -1,3 +1,18 @@
+.menu__item {
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .logo-back {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -187,7 +202,7 @@
   font-size: 15px;
   font-weight: 300;
   flex-grow: 1;
-  white-space: nowrap;
+  white-space: wrap;
 }
 .menu .menu__item--details .menu__item--price {
   font-size: 15px;

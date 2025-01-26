@@ -2,6 +2,23 @@ $primaryColor: #9356DC;
 $secondColor: #FF79DA;
 $thirdColor: #99E2D0;
 
+.menu__item {
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  
+  // Animation pour faire apparaître les éléments
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
 // Styles
 .logo-back {
     display: grid;
@@ -192,7 +209,7 @@ $thirdColor: #99E2D0;
                 font-size: 15px;
                 font-weight: 300;
                 flex-grow: 1;
-                white-space: nowrap;
+                white-space: wrap;
             }
     
             .menu__item--price {
