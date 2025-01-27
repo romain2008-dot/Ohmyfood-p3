@@ -24,9 +24,8 @@ $thirdColor: #99E2D0;
     width: 300px;
     height: 100px;
     border-radius: 10px;
-}
 
-.loading-bar {
+    &-bar {
     width: 50px;
     height: 10px;
     margin: 0 5px;
@@ -34,23 +33,24 @@ $thirdColor: #99E2D0;
     animation: loading-wave-animation 1s ease-in-out infinite;
     transform-origin: bottom;
     will-change: transform;
-}
+    
+    &:nth-child(1) { 
+        background-color: $thirdColor;
+    }
 
-.loading-bar:nth-child(1) { 
-    background-color: $thirdColor;
+    &:nth-child(2) { 
+        background-color: $secondColor; 
+        animation-delay: 0.1s; 
+   }
+    &:nth-child(3) { 
+        background-color: $primaryColor; 
+        animation-delay: 0.2s; 
+    }
+    &:nth-child(4) { 
+        background-color: #2D2A4A; 
+        animation-delay: 0.3s; 
+    }
  }
-
-.loading-bar:nth-child(2) { 
-    background-color: $secondColor; 
-    animation-delay: 0.1s; 
-}
-.loading-bar:nth-child(3) { 
-    background-color: $primaryColor; 
-    animation-delay: 0.2s; 
-}
-.loading-bar:nth-child(4) { 
-    background-color: #2D2A4A; 
-    animation-delay: 0.3s; 
 }
 
 @keyframes loading-wave-animation {
@@ -261,7 +261,7 @@ nav {
 
 }
 
-.card__container{
+.card__container {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -272,46 +272,51 @@ nav {
     flex-direction: column;
     border-radius: 15px;
     margin: 0 20px;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: 0 4px 15px 0px #0000001A;
     position: relative;
 
+    a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
+
     &__content {
-        padding: 15px; 
+        padding: 15px;
         color: black;
     }
-    
-    &__image{
-        height: 100%;
-        height: auto;
+
+    &__image {
         height: 250px;
+        width: 100%;
         object-fit: cover;
     }
 
-    &__icon {
-        display: flex;
-        justify-content: end;
-        margin: 0 20px 15px 0;
-        font-size: 21px;
+    .heart-toggle {
         position: absolute;
-        bottom: 30px;  
-        right: 0px;
-        color: black;
+        bottom: 30px;
+        right: 20px;
+        width: 22px;
+        height: 22px;
+        z-index: 10;
+        opacity: 0;
+        cursor: pointer;
+    }
 
-        .heart-toggle {
-            position: absolute; 
-            top: 0;
-            left: -22px;
-            width: 22px; 
-            height: 22px;
-            z-index: 10;
-            opacity: 0;
-          }
+    &__icon {
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+        font-size: 21px;
+        width: 22px;
+        height: 22px;
         
         .fa-regular.fa-heart {
             position: absolute;
             z-index: 1;
-            width: 22px ;
+            width: 22px;
+            transition: opacity 400ms;
         }
         
         .fa-solid.fa-heart {
@@ -319,26 +324,70 @@ nav {
             z-index: 2;
             width: 22px;
             transform: scale(0);
-            transition: transform 400ms ;
+            transition: transform 400ms;
             transform-origin: 50% 100%;
-            background: linear-gradient(to top, #FF79DA, #9356DC); 
+            background: linear-gradient(to top, #FF79DA, #9356DC);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-
-        .heart-toggle:checked ~ .fa-solid.fa-heart {
-            transform: scale(1.1);
-        }
     }
 
-    &__nouveau{
+    &__nouveau {
         position: absolute;
         top: 13px;
         right: 10px;
-        background-color: $thirdColor;
-        color: darken($thirdColor,  50%);
-        padding:  5px 10px;
+        background-color: #99E2D0;
+        color: darken(#99E2D0, 50%);
+        padding: 5px 10px;
+    }
+
+    .heart-toggle:checked ~ .card__icon {
+        .fa-solid.fa-heart {
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .restaurant__title__container {
+        max-width: 1100px;
+        margin: 0 auto;
+        
+        .card__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            .card {
+                height: 250px;
+                
+                a {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                &__image {
+                    height: 70%;
+                    object-fit: cover;
+                }
+                
+                &__content {
+                    padding: 10px;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .heart-toggle,
+                &__icon {
+                    bottom: 20px;
+                }
+            }
+        }
     }
 }
 

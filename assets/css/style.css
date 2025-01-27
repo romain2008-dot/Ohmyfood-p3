@@ -21,7 +21,6 @@
   height: 100px;
   border-radius: 10px;
 }
-
 .loading-bar {
   width: 50px;
   height: 10px;
@@ -31,21 +30,17 @@
   transform-origin: bottom;
   will-change: transform;
 }
-
 .loading-bar:nth-child(1) {
   background-color: #99E2D0;
 }
-
 .loading-bar:nth-child(2) {
   background-color: #FF79DA;
   animation-delay: 0.1s;
 }
-
 .loading-bar:nth-child(3) {
   background-color: #9356DC;
   animation-delay: 0.2s;
 }
-
 .loading-bar:nth-child(4) {
   background-color: #2D2A4A;
   animation-delay: 0.3s;
@@ -251,39 +246,43 @@ nav .nav__content {
   box-shadow: 0 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   position: relative;
 }
+.card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
 .card__content {
   padding: 15px;
   color: black;
 }
 .card__image {
-  height: 100%;
-  height: auto;
   height: 250px;
+  width: 100%;
   object-fit: cover;
 }
-.card__icon {
-  display: flex;
-  justify-content: end;
-  margin: 0 20px 15px 0;
-  font-size: 21px;
+.card .heart-toggle {
   position: absolute;
   bottom: 30px;
-  right: 0px;
-  color: black;
-}
-.card__icon .heart-toggle {
-  position: absolute;
-  top: 0;
-  left: -22px;
+  right: 20px;
   width: 22px;
   height: 22px;
   z-index: 10;
   opacity: 0;
+  cursor: pointer;
+}
+.card__icon {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  font-size: 21px;
+  width: 22px;
+  height: 22px;
 }
 .card__icon .fa-regular.fa-heart {
   position: absolute;
   z-index: 1;
   width: 22px;
+  transition: opacity 400ms;
 }
 .card__icon .fa-solid.fa-heart {
   position: absolute;
@@ -297,9 +296,6 @@ nav .nav__content {
   -webkit-background-clip: text;
   color: transparent;
 }
-.card__icon .heart-toggle:checked ~ .fa-solid.fa-heart {
-  transform: scale(1.1);
-}
 .card__nouveau {
   position: absolute;
   top: 13px;
@@ -308,7 +304,43 @@ nav .nav__content {
   color: #1b6150;
   padding: 5px 10px;
 }
+.card .heart-toggle:checked ~ .card__icon .fa-solid.fa-heart {
+  transform: scale(1.1);
+}
 
+@media (min-width: 1024px) {
+  .restaurant__title__container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .restaurant__title__container .card__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .restaurant__title__container .card__container .card {
+    height: 250px;
+  }
+  .restaurant__title__container .card__container .card a {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .restaurant__title__container .card__container .card__image {
+    height: 70%;
+    object-fit: cover;
+  }
+  .restaurant__title__container .card__container .card__content {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .restaurant__title__container .card__container .card .heart-toggle, .restaurant__title__container .card__container .card__icon {
+    bottom: 20px;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
