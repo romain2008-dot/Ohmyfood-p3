@@ -350,46 +350,6 @@ nav {
 }
 
 
-@media (min-width: 1024px) {
-    .restaurant__title__container {
-        max-width: 1100px;
-        margin: 0 auto;
-        
-        .card__container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-
-            .card {
-                height: 250px;
-                
-                a {
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                }
-                
-                &__image {
-                    height: 70%;
-                    object-fit: cover;
-                }
-                
-                &__content {
-                    padding: 10px;
-                    flex-grow: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-
-                .heart-toggle,
-                &__icon {
-                    bottom: 20px;
-                }
-            }
-        }
-    }
-}
 
 .footer{
     display: flex;
@@ -459,30 +419,44 @@ nav {
         }
     }
 
-    .restaurant__title__container{
+    .restaurant__title__container {
         max-width: 1100px;
         margin: 0 auto;
         
         .card__container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
 
-        .card {
-            height: 250px; 
+            .card {
+                height: 250px;
+                
+                a {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                &__image {
+                    height: 75%;
+                    object-fit: cover;
+                }
+                
+                &__content {
+                    padding: 10px;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .heart-toggle,
+                &__icon {
+                    bottom: 20px;
+                }
+            }
         }
-        
-        .card__image {
-            height: 75%; 
-            object-fit: cover; 
-        }
-        
-        .card__content {
-            padding: 10px; 
-            height: 25%; 
-        }
-      }
-    } 
+    }
 
     .footer{
         flex-direction: row-reverse;
