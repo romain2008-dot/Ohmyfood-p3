@@ -272,6 +272,7 @@ nav .nav__content {
 }
 .card__icon {
   position: absolute;
+  z-index: 9;
   bottom: 30px;
   right: 20px;
   font-size: 21px;

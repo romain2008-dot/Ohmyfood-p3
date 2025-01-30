@@ -1,15 +1,29 @@
 // Variables
 $primaryColor: #9356DC;
 $secondColor: #FF79DA;
-$thirdColor: #99E2D0;
+$tertiary-color: #99E2D0;
 $card-background-color: #fff;
 $box-shadow-color: #aaa;
 
-// Mixins
-@mixin primary-box-shadow($color: $box-shadow-color) {
-  box-shadow: 0.1rem 0.1rem 0.5rem 0 $color;
+// Animation pour faire apparaître les éléments
+.card-menu {
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
 }
 
+@keyframes slideIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+// Mixins
 @mixin ellipsis {
   overflow: hidden;
   white-space: nowrap;
@@ -36,12 +50,13 @@ $box-shadow-color: #aaa;
 
 .card-menu {
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   width: 100%;
-  @include primary-box-shadow;
+  box-shadow: 0px 4px 15px 0px #0000001A;
   background-color: $card-background-color;
   position: relative;
-  border-radius: 1rem;
+  border-radius: 15px;
+  padding: 15px;
   cursor: pointer;
   margin: 0;
 
@@ -58,15 +73,13 @@ $box-shadow-color: #aaa;
     z-index: 2;
   }
 
-  &__dish-title-container {
-    padding: 0.5rem 0.5rem 0.75rem 0.5rem;
-    width: 80%;
+  &-title-container {
+    width: 89%;
     transition: width 300ms ease-in-out;
   }
 
   &__title {
     font-size: 18px;
-    letter-spacing: -0.025rem;
     @include ellipsis;
     margin: 0;
   }
@@ -78,27 +91,27 @@ $box-shadow-color: #aaa;
     font-weight: 300;
   }
 
-  &__dish-price {
+  &-price {
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+    margin-bottom: 16px;
+    margin-right: 16px;
+
     &-check-container {
       display: flex;
       position: absolute;
       top: 0;
-      right: -4rem;
+      right: -60px;
       height: 100%;
       transition: transform 300ms ease-in-out;
     }
-    display: flex;
-    align-items: flex-end;
-    font-size: 100%;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+    
   }
 
   &__check {
     background-color: $tertiary-color;
-    width: 4rem;
-    border-radius: 0 1rem 1rem 0;
+    width: 60px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -109,7 +122,6 @@ $box-shadow-color: #aaa;
       color: $tertiary-color;
       width: 20px;
       height: 20px;
-      padding: 0.25rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -120,15 +132,15 @@ $box-shadow-color: #aaa;
 
   // Modified hover states to checkbox:checked
   &__checkbox:checked {
-    & ~ .card-menu__dish-title-container {
-      width: 65%;
+    & ~ .card-menu-title-container {
+      width: 69%;
     }
-    & ~ .card-menu__dish-price-check-container {
-      transform: translateX(-4rem);
+    & ~ .card-menu-price-check-container {
+      transform: translateX(-60px);
     }
   }
 
-  .card-menu__checkbox:checked ~ .card-menu__dish-price-check-container .card-menu__check .fa-check {
+  &__checkbox:checked ~ &-price-check-container &__check .fa-check {
     transform: rotate(0deg);
   }
 }
@@ -169,54 +181,63 @@ $box-shadow-color: #aaa;
 .img-restaurant {
   width: 100%;
   height: 275px;
-  object-fit: cover;
+  object-fit: cover;  
 }
 
 // Title and Heart Icon Styles
-.title__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px;
-  position: relative;
+.card__icon {
+  position: absolute; 
+  left: 0;
+  top: 0;
 
-  h1 {
-    font-family: "Shrikhand", serif;
-    font-size: 28px;
-    font-weight: 400;
-  }
-
-  .card__icon {
-    position: absolute;
-    left: 0;
-    top: 5px;
-
-    .heart-toggle {
+  .heart-toggle {
       height: 28px;
       width: 28px;
+      position: relative;
       left: 0;
+      opacity: 0;
+      cursor: pointer;
     }
 
-    .fa-heart {
+  .fa-heart {
       font-size: 28px;
       transition: transform 300ms linear;
       will-change: transform;
       width: 28px;
       position: absolute;
-    }
+  }
 
-    .fa-regular.fa-heart,
-    .fa-solid.fa-heart {
+  .fa-regular.fa-heart,
+  .fa-solid.fa-heart {
       width: 28px;
       position: absolute;
-    }
-
-    .fa-solid.fa-heart {
+      pointer-events: none;
+  }
+  
+  .fa-solid.fa-heart {
       margin-top: 2px;
-    }
   }
 }
+
+.title__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 10px;
+  position: relative;
+
+  h1 { 
+      font-family: "Shrikhand", serif;
+      font-size: 28px;
+      font-weight: 400;
+  }
+}
+
+.card__icon:has(.heart-toggle:checked) .fa-solid.fa-heart {
+  transform: scale(1.1);
+}
+
 
 // Button Styles
 .container__button {
@@ -246,31 +267,15 @@ $box-shadow-color: #aaa;
   }
 }
 
-// Footer Styles
-.footer {
-  h2 {
-    text-align: center;
-  }
 
-  .footer__link {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-
-    .footer__first,
-    .footer__second {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
+.menu__section-title{
+  font-weight: 300;
 }
 
-// Line Styles for sections
 .line {
   height: 3px;
   width: 40px;
-  background-color: $thirdColor;
+  background-color: $tertiary-color;
   margin: 5px 0;
 }
 

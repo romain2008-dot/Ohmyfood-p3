@@ -1,6 +1,6 @@
 $primaryColor: #9356DC;
 $secondColor: #FF79DA;
-$thirdColor: #99E2D0;
+$tertiary-color: #99E2D0;
 
 /* LOADER */
 .loader-overlay {
@@ -35,7 +35,7 @@ $thirdColor: #99E2D0;
     will-change: transform;
     
     &:nth-child(1) { 
-        background-color: $thirdColor;
+        background-color: $tertiary-color;
     }
 
     &:nth-child(2) { 
@@ -306,6 +306,7 @@ nav {
 
     &__icon {
         position: absolute;
+        z-index: 9;
         bottom: 30px;
         right: 20px;
         font-size: 21px;
@@ -337,8 +338,8 @@ nav {
         position: absolute;
         top: 13px;
         right: 10px;
-        background-color: #99E2D0;
-        color: darken(#99E2D0, 50%);
+        background-color: $tertiary-color;
+        color: darken($tertiary-color, 50%);
         padding: 5px 10px;
     }
 
