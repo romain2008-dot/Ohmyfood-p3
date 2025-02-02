@@ -3,6 +3,11 @@
 .card-menu {
   opacity: 0;
   animation: slideIn 1s ease-out forwards;
+  @for $i from 1 through 10 { 
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.2s; 
+    }
+  }
 }
 
 .menu {
@@ -232,6 +237,13 @@
   width: 40px;
   background-color: $tertiary-color;
   margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+  .menu{
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 1024px) {

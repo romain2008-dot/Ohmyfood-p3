@@ -37,9 +37,12 @@ $box-shadow-color: #aaa;
   }
 
 @keyframes fadeOutLoader {
-    99%{ opacity: 1;}
-    100%{ opacity: 0; 
-        visibility: hidden;
+    99%{
+      opacity: 1;
+    }
+    100%{ 
+      opacity: 0; 
+      visibility: hidden;
     }
 }
 
