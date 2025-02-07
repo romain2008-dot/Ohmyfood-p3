@@ -156,6 +156,8 @@ nav .nav__content {
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
   overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 .nav__button::after {
   content: "";
@@ -171,7 +173,8 @@ nav .nav__content {
   z-index: 2;
 }
 .nav__button:hover {
-  box-shadow: 0px 6px 15px 2px rgba(0, 0, 0, 0.6);
+  transform: scale(1.02);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.35);
 }
 .nav__button:hover::after {
   opacity: 1;
@@ -281,7 +284,6 @@ nav .nav__content {
   position: absolute;
   z-index: 1;
   width: 22px;
-  transition: opacity 400ms;
 }
 .card__icon .fa-solid.fa-heart {
   position: absolute;
@@ -295,6 +297,9 @@ nav .nav__content {
   -webkit-background-clip: text;
   color: transparent;
 }
+.card .heart-toggle:checked ~ .card__icon .fa-solid.fa-heart {
+  transform: scale(1.1);
+}
 .card__nouveau {
   position: absolute;
   top: 13px;
@@ -302,9 +307,6 @@ nav .nav__content {
   background-color: #99E2D0;
   color: #1b6150;
   padding: 5px 10px;
-}
-.card .heart-toggle:checked ~ .card__icon .fa-solid.fa-heart {
-  transform: scale(1.1);
 }
 
 .footer {
